@@ -4,7 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-bevy = "0.13.0"
+bevy = { version = "0.13", features = ["dynamic_linking"] }
+bevy_rapier3d = "0.25"  # For 3D physics
+bevy_asset_loader = "0.20"  # For asset loading
+rand = "0.8"
 
 [profile.dev]
 opt-level = 3
