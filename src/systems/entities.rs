@@ -110,6 +110,8 @@ fn setup(
                 transform: Transform::from_xyz(x, 0.0, z),
                 ..default()
             },
+            Position { value: Vec3::new(x, 0.0, z) },
+            ResourceNode,
             RigidBody::Fixed,
             Collider::cylinder(1.0, 0.5),
             Gatherable {
@@ -131,6 +133,8 @@ fn setup(
                 transform: Transform::from_xyz(x, 0.0, z),
                 ..default()
             },
+            Position { value: Vec3::new(x, 0.0, z) },
+            ResourceNode,
             RigidBody::Fixed,
             Collider::cylinder(0.5, 0.5),
             Gatherable {
