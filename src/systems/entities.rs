@@ -143,6 +143,9 @@ fn setup(
 }
 
 /// Spawns resource nodes (trees and rocks) in a grid after assets are loaded.
+///
+/// This function is currently disabled and left in the codebase for future
+/// use when dynamic resource spawning is re-enabled.
 fn spawn_resources(
     mut commands: Commands,
     game_assets: Res<GameAssets>,
