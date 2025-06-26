@@ -69,11 +69,16 @@ fn gather_resources(
 
     // Process the closest valid resource
     if let Some((entity, gatherable)) = closest_resource {
-        let current_amount = inventory.resources.get(&gatherable.resource_type).unwrap_or(&0);
-        if current_amount < &inventory.max_stack_size {
+        let current_amount = *inventory
+            .resources
+            .get(&gatherable.resource_type)
+            .unwrap_or(&0);
+        if current_amount < inventory.max_stack_size {
             // Add resource to inventory
             let new_amount = current_amount + 1;
-            inventory.resources.insert(gatherable.resource_type, new_amount);
+            inventory
+                .resources
+                .insert(gatherable.resource_type, new_amount);
             
             // Despawn the resource node
             commands.entity(entity).despawn_recursive();
